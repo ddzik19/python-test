@@ -75,8 +75,13 @@ def main():
     while isRunning:
         # displaying the menu to the suer
         menu()
-        # getting user inputs
-        userInput = int(input("Please enter option: "))
+        
+        try:
+            # getting user inputs
+            userInput = int(input("Please enter option: "))
+        except ValueError:
+            print("Value entered is not a number. Please enter a number.")
+            continue
         
         # checking for inputs
         if userInput == 1:

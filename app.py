@@ -108,12 +108,12 @@ def menu():
     # printing the menu with a nice margin that makes the menu easy to read
     print("""
         ----------------------------
-        | Menu                     |
+        | Menu                     
         ----------------------------
-        | 1. List car by id        |
-        | 2. Average price of car  |
+        | 1. List car by id        
+        | 2. Average price of car  
         ----------------------------
-        | 0. Exit                  |
+        | 0. Exit                  
         ----------------------------
         """)
 
@@ -128,7 +128,7 @@ def carById(id):
             # printing the information
             print("""
         ----------------------------------------
-        | Information                          |
+        | Information                          
         ----------------------------------------
         | Make: {}                                
         | Model: {}                               
@@ -147,10 +147,10 @@ def averagePriceSubMenu():
     # printing a submenu
     print("""
           -------------------------------
-          | Get average price by:       |
+          | Get average price by:       
           -------------------------------
-          | 1. Make                     |
-          | 2. Model                    |
+          | 1. Make                     
+          | 2. Model                    
           -------------------------------
           """)           
 
@@ -183,5 +183,14 @@ def getAverageByMake():
           {}-------------------------
           
           """.format(menuString))
+    # ask for input
+    try:
+        make = int(input("Please enter the index of the make: "))
+    except ValueError:
+        print("Value is not a number, Please try again.")
+    print(make)
+    # now we want to get the make by the index entered by user
+    
+    
 # running the main function
 main()

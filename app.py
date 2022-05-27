@@ -59,8 +59,20 @@ cars ="""
     }
     """
 
-# we turn the json string to json obj
+# we parse the cars json
 data = json.loads(cars)
+
+# the main app function 
+def main():
+    # creating a boolean that will be responsible for 
+    # the continuous dispalying of the menu until the
+    # user exits the app
+    isRunning = True
+    # while loop responsible for running the app
+    while isRunning:
+        # displaying the menu to the suer
+        menu()
+
 
 # this function will be responsible for displaying the menu to the user
 def menu():
@@ -74,5 +86,5 @@ def menu():
         ---------------------------------
         """)
 
-# testing if the menu works
+# running the main function
 menu()

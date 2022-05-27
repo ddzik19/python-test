@@ -114,7 +114,7 @@ def menu():
           ----------------------------
           | Menu                     
           ----------------------------
-          | 1. List car by id        
+          | 1. List car info by id        
           | 2. Average price of car  
           ----------------------------
           | 0. Exit                  

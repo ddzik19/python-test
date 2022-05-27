@@ -62,6 +62,9 @@ cars ="""
 # we parse the cars json
 data = json.loads(cars)
 
+# for car in data['cars']:
+#     print(car['id'])
+
 # the main app function 
 def main():
     # creating a boolean that will be responsible for 
@@ -72,19 +75,29 @@ def main():
     while isRunning:
         # displaying the menu to the suer
         menu()
-
+        # getting user inputs
+        userInput = int(input("Please enter option: "))
+        
+        # checking for inputs
+        if userInput == 1:
+            print("printing id")
+        elif userInput == 2:
+            print("printing other")
+        elif userInput == 0:
+            print("Goodbye!")
+            isRunning = False
 
 # this function will be responsible for displaying the menu to the user
 def menu():
     # printing the menu with a nice margin that makes the menu easy to read
     print("""
-        ---------------------------------
-        | 1. Get car by id              |
-        | 2. Get average price of car   |
-        ---------------------------------
-        | 0. Exit                       |
-        ---------------------------------
+        ----------------------------
+        | 1. List car by id        |
+        | 2. Average price of car  |
+        ----------------------------
+        | 0. Exit                  |
+        ----------------------------
         """)
 
 # running the main function
-menu()
+main()

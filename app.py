@@ -89,7 +89,11 @@ def main():
                 continue
             carById(carid)
         elif userInput == 2:
-            print("printing other")
+            averagePriceSubMenu()
+            try:
+                option = int(input("Please enter option: "))
+            except ValueError:
+                print("Value is not a number, Please try again.")
         elif userInput == 0:
             print("Goodbye!")
             isRunning = False
@@ -132,8 +136,10 @@ def carById(id):
             break
     else:
         print("Car with this id does not exist.")
-        
+
+# this is a sub menu that will be displayed when the user enters option 2        
 def averagePriceSubMenu():
+    # printing a submenu
     print("""
           -------------------------------
           | Get average price by:       |

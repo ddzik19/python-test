@@ -189,7 +189,13 @@ def getAverageByMake():
           """.format(menuString))
     # ask for input
     try:
-        index = int(input("Please enter the index of the make: "))   
+        index = int(input("Please enter the index of the make: ")) 
+        # here we check if the index entered by the user is correct,
+        # withing the size of the finalList
+        # if its not then we will continue to ask for input until
+        # correct index is entered
+        while index < 0 or index > len(finalList) - 1:
+            index = int(input("Please enter the index of the make: "))
     except ValueError:
         print("Value is not a number, Please try again.")
     
@@ -247,6 +253,12 @@ def getAverageByModel():
     # ask for input
     try:
         index = int(input("Please enter the index of the model: "))
+        # here we check if the index entered by the user is correct,
+        # withing the size of the finalList
+        # if its not then we will continue to ask for input until
+        # correct index is entered
+        while index < 0 or index > len(finalList) - 1:
+            index = int(input("Please enter the index of the make: "))
     except ValueError:
         print("Value is not a number, Please try again.")
     

@@ -155,14 +155,13 @@ def averagePriceSubMenu():
           """)           
 
 def getAverageByMake():
-    
     # creating empty list
     makeList = []
     # creating a list that will hold the unique car makes
     finalList = []
     # we will now iterate through the cars and add the models to the make
     for car in data['cars']:
-        makeList.add(car['make'])
+        makeList.append(car['make'])
     
     # now we want to get unique makes
     for i in makeList:
@@ -170,7 +169,19 @@ def getAverageByMake():
         # this means we will only have unique makes in finallist
         if i not in finalList:
             finalList.append(i)
-        
-    print(finalList)
+    # this will be printed in the submenu
+    menuString = ""    
+    # here we loop through the items in teh finalList array
+    for x in finalList:
+        # adding the information form finalList to the menu and formatting it
+        menuString += "| " + str(finalList.index(x)) + ") " + x + " \n          "
+    # formatted menu that will be displayed to the user, this was the oly way I knew how to do it
+    print("""
+          -------------------------
+          |         Makes
+          -------------------------
+          {}-------------------------
+          
+          """.format(menuString))
 # running the main function
 main()

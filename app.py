@@ -89,11 +89,16 @@ def main():
                 continue
             carById(carid)
         elif userInput == 2:
+            # displaying teh sub menu
             averagePriceSubMenu()
+            # try block to validate if entered option is number
             try:
                 option = int(input("Please enter option: "))
             except ValueError:
                 print("Value is not a number, Please try again.")
+            if option == 1:
+                # execute the getAverageByMake function
+                getAverageByMake()
         elif userInput == 0:
             print("Goodbye!")
             isRunning = False
@@ -149,6 +154,14 @@ def averagePriceSubMenu():
           -------------------------------
           """)           
 
-
+def getAverageByMake():
+    
+    # creating empty list
+    modelList = []
+    # we will now iterate through the cars and add teh models to the make
+    for car in data['cars']:
+        modelList.append(car['make'])
+    
+    print()
 # running the main function
 main()

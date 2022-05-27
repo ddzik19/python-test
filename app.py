@@ -133,8 +133,15 @@ def carById(id):
     else:
         print("Car with this id does not exist.")
         
-        
-            
+def averagePriceSubMenu():
+    print("""
+          -------------------------------
+          | Get average price by:       |
+          -------------------------------
+          | 1. Make                     |
+          | 2. Model                    |
+          -------------------------------
+          """)           
 
 
 # running the main function

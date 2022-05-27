@@ -111,14 +111,14 @@ def main():
 def menu():
     # printing the menu with a nice margin that makes the menu easy to read
     print("""
-        ----------------------------
-        | Menu                     
-        ----------------------------
-        | 1. List car by id        
-        | 2. Average price of car  
-        ----------------------------
-        | 0. Exit                  
-        ----------------------------
+          ----------------------------
+          | Menu                     
+          ----------------------------
+          | 1. List car by id        
+          | 2. Average price of car  
+          ----------------------------
+          | 0. Exit                  
+          ----------------------------
         """)
 
 # this function will be responsible for getting a car by id
@@ -141,7 +141,7 @@ def carById(id):
         | last_updated: {}                        
         | price: {}                               
         ----------------------------------------
-                  """.format(car['make'],car['model'],car['year'],car['id'],car['last_updated'],car['price']))
+        """.format(car['make'],car['model'],car['year'],car['id'],car['last_updated'],car['price']))
             break
     else:
         print("Car with this id does not exist.")

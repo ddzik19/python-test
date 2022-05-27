@@ -96,9 +96,13 @@ def main():
                 option = int(input("Please enter option: "))
             except ValueError:
                 print("Value is not a number, Please try again.")
+                continue
             if option == 1:
                 # execute the getAverageByMake function
                 getAverageByMake()
+            elif option == 2:
+                # execute the getAverageByModel function
+                getAverageByModel()
         elif userInput == 0:
             print("Goodbye!")
             isRunning = False
@@ -155,6 +159,63 @@ def averagePriceSubMenu():
           """)           
 
 def getAverageByMake():
+    # creating empty list
+    makeList = []
+    # creating a list that will hold the unique car makes
+    finalList = []
+    # we will now iterate through the cars and add the models to the make
+    for car in data['cars']:
+        makeList.append(car['make'])
+    
+    # now we want to get unique makes
+    for i in makeList:
+        # if i is not in finalList we add it to finalList
+        # this means we will only have unique makes in finallist
+        if i not in finalList:
+            finalList.append(i)
+    # this will be printed in the submenu
+    menuString = ""    
+    # here we loop through the items in the finalList array
+    for x in finalList:
+        # adding the information form finalList to the menu and format it using the format function
+        menuString += "| {}) {} \n          ".format(str(finalList.index(x)),x)
+    # formatted menu that will be displayed to the user, this was the oly way I knew how to do it
+    print("""
+          -------------------------
+          |         Makes
+          -------------------------
+          {}-------------------------
+          
+          """.format(menuString))
+    # ask for input
+    try:
+        index = int(input("Please enter the index of the make: "))   
+    except ValueError:
+        print("Value is not a number, Please try again.")
+    
+    # now we want to get the make by the index entered by user
+    make = str(finalList[index])
+    # we need to see how many cars of said make exist
+    # in teh cars json to accurately calculate the average
+    count = makeList.count(make)
+    # the accumulated price of all cars of said make
+    accumPrice = 0
+    # iterate through cars and get the price of cars of the 
+    # entered make
+    for car in data['cars']:
+        if car['make'] == make:
+            accumPrice += car['price']
+    # now get the average price
+    # we divide the accumPrice of the cars with the count (number of cars of that make)
+    # printing int value of the avgPrice
+    avgPrice = int(accumPrice / count)
+    # the line of code below will print a float value of the avgPrice
+    # avgPrice = accumPrice / count
+    # printing the average price to the console.
+    print("The average price of {} is: {}".format(make, avgPrice))            
+
+
+def getAverageByModel():
     # creating empty list
     makeList = []
     # creating a list that will hold the unique car makes

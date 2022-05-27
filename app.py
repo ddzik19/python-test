@@ -85,7 +85,12 @@ def main():
         
         # checking for inputs
         if userInput == 1:
-            print("printing id")
+            try:
+                carid = int(input("Please enter id of car to get: "))
+            except ValueError:
+                print("Id does not exist or value is not a number, Please try again.")
+                continue
+            carById(carid)
         elif userInput == 2:
             print("printing other")
         elif userInput == 0:
@@ -103,6 +108,11 @@ def menu():
         | 0. Exit                  |
         ----------------------------
         """)
+
+# this function will be responsible for getting a car by id
+def carById(id):
+    print(id)
+
 
 # running the main function
 main()

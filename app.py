@@ -11,7 +11,7 @@ cars ="""
         "make":"Nissan",
         "model":"Micra",
         "year":2004,
-        "chasis_no":"12345A",
+        "chassis_no":"12345A",
         "id":1,
         "last_updated":"2017-02-01 00:00:00",
         "price":500.0
@@ -19,7 +19,7 @@ cars ="""
         "make":"Nissan",
         "model":"Micra",
         "year":2004,
-        "chasis_no":"12425A",
+        "chassis_no":"12425A",
         "id":6,
         "last_updated":" 2017-03-01 00:00:00",
         "price":400.0
@@ -27,7 +27,7 @@ cars ="""
         "make":"Ford",
         "model":"Fiesta",
         "year":2002,
-        "chasis_no":"12345B",
+        "chassis_no":"12345B",
         "id":2,
         "last_updated":" 2017-03-01 00:00:00",
         "price":300.0
@@ -35,7 +35,7 @@ cars ="""
         "make":"Audi",
         "model":"A3",
         "year":"",
-        "chasis_no":"12345C",
+        "chassis_no":"12345C",
         "id":3,
         "last_updated":" 2017-04-01 00:00:00",
         "price":0
@@ -43,7 +43,7 @@ cars ="""
         "make":"Nissan",
         "model":"Micra",
         "year":"2004",
-        "chasis_no":"12345D",
+        "chassis_no":"12345D",
         "id":4,
         "last_updated":" 2017-05-01 00:00:00",
         "price":200.0
@@ -51,7 +51,7 @@ cars ="""
         "make":"Peugot",
         "model":"308",
         "year":"1998",
-        "chasis_no":"12345E",
+        "chassis_no":"12345E",
         "id":5,
         "last_updated":" 2017-06-01 00:00:00",
         "price":100.0
@@ -62,6 +62,17 @@ cars ="""
 # we turn the json string to json obj
 data = json.loads(cars)
 
-# testing if the json database works
-for car in data['cars']:
-    print(car['id'])
+# this function will be responsible for displaying the menu to the user
+def menu():
+    # printing the menu with a nice margin that makes the menu easy to read
+    print("""
+        ---------------------------------
+        | 1. Get car by id              |
+        | 2. Get average price of car   |
+        ---------------------------------
+        | 0. Exit                       |
+        ---------------------------------
+        """)
+
+# testing if the menu works
+menu()

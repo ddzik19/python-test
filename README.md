@@ -13,7 +13,7 @@ Once we get to the folder with the app we can type in the command:
 
 In Visual Studio Code (VSC).
 
-Click on the app.py file in the explorer. then click teh play button that is in the top right hand corner of the screen.
+Click on the app.py file in the explorer. then click he play button that is in the top right hand corner of the screen.
 
 These two methods should work and run the app.
 
@@ -93,9 +93,9 @@ This means that if a new car of a different make is added to the json. The app w
 
 The user can enter the index of the make that they want to get the average price for.
 
-Then we use the index of the make teh user entered to count how many cars of that make are in the cars json.
+Then we use the index of the make the user entered to count how many cars of that make are in the cars json.
 
-After that we are going to get the accumulated price of all teh cars of that make. We use a for loop to iterate through the cars and ge their prices if teh cars are of the chosen make.
+After that we are going to get the accumulated price of all the cars of that make. We use a for loop to iterate through the cars and ge their prices if the cars are of the chosen make.
 ```python
     accumPrice = 0
     for car in data['cars']:
@@ -111,7 +111,7 @@ We can finally calculate and print the average price of cars of x make.
 # Structure
 We have one main function that is responsible for the whole app. In this function we call all of the other functions and display menus. Doing it this way makes it easy to read and navigate through. It has a clear nice flow.
 
-I tried to build the app in a way that would allow us to add more cars into the cars json and not have to worry about having to refactor any code. Therefore the sub menus where we print information about the car models and makes, we use a for loop to iterate through teh necessary information and get rid of any duplicates.
+I tried to build the app in a way that would allow us to add more cars into the cars json and not have to worry about having to refactor any code. Therefore the sub menus where we print information about the car models and makes, we use a for loop to iterate through the necessary information and get rid of any duplicates.
 
 ### Link
 Here is the link to the public repository on my GitHub page: [repo](https://github.com/ddzik19/python-test)

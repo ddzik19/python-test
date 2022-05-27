@@ -62,9 +62,6 @@ cars ="""
 # we parse the cars json
 data = json.loads(cars)
 
-# for car in data['cars']:
-#     print(car['id'])
-
 # the main app function 
 def main():
     # creating a boolean that will be responsible for 
@@ -88,7 +85,7 @@ def main():
             try:
                 carid = int(input("Please enter id of car to get: "))
             except ValueError:
-                print("Id does not exist or value is not a number, Please try again.")
+                print("Value is not a number, Please try again.")
                 continue
             carById(carid)
         elif userInput == 2:
@@ -102,6 +99,8 @@ def menu():
     # printing the menu with a nice margin that makes the menu easy to read
     print("""
         ----------------------------
+        | Menu                     |
+        ----------------------------
         | 1. List car by id        |
         | 2. Average price of car  |
         ----------------------------
@@ -111,7 +110,31 @@ def menu():
 
 # this function will be responsible for getting a car by id
 def carById(id):
-    print(id)
+    # looping through the cars in the json array
+    for car in data['cars']:
+        # if the id of the car in the array matches the 
+        # passed in id we will display the information
+        # else we will display an error message
+        if car['id'] == id:
+            # printing the information
+            print("""
+        ----------------------------------------
+        | Information                          |
+        ----------------------------------------
+        | Make: {}                                
+        | Model: {}                               
+        | year: {}                                
+        | id: {}                                  
+        | last_updated: {}                        
+        | price: {}                               
+        ----------------------------------------
+                  """.format(car['make'],car['model'],car['year'],car['id'],car['last_updated'],car['price']))
+            break
+    else:
+        print("Car with this id does not exist.")
+        
+        
+            
 
 
 # running the main function
